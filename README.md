@@ -23,4 +23,4 @@ You can visit the portfolio here: **[mpadilla.netlify.app](https://mpadilla.netl
 
 ##
 
-This web portfolio was developed following the explanations and advice from the Midudev channel. This approach allows you to follow the steps gradually and understand each key aspect of the website.
+This web portfolio was developed following the explanations and advice from Midudev channel. This approach allows you to follow the steps gradually and understand each key aspect of the website.
