@@ -1,27 +1,26 @@
-# 🌟 Manuel Padilla - Portfolio Web
+# 🌟 Manuel Padilla - Web Portfolio
 
-¡Bienvenido al código fuente de mi portfolio web! Este proyecto ha sido desarrollado utilizando **Astro** y **Tailwind CSS** para ofrecer una experiencia rápida, moderna y totalmente responsive. Además, se ha añadido un atractivo fondo interactivo de partículas gracias a la integración de **astro-particles**.
+Welcome to the source code of my web portfolio! This project was developed using **Astro** and **Tailwind CSS** to provide a fast, modern, and fully responsive experience. Additionally, an attractive interactive particle background has been added thanks to the integration of **astro-particles**.
 
-Puedes visitar el portfolio aquí: **[mpadilla.netlify.app](https://mpadilla.netlify.app)**
+You can visit the portfolio here: **[mpadilla.netlify.app](https://mpadilla.netlify.app)**
 
-## 🚀 Tecnologías Utilizadas
+## 🚀 Technologies Used
 
-- **[Astro](https://astro.build/)**: Un framework para construir sitios web rápidos con componentes UI desde cualquier framework (React, Svelte, Vue, etc.).
-- **[Tailwind CSS](https://tailwindcss.com/)**: Un framework CSS para construir interfaces de usuario personalizadas rápidamente.
-- **[astro-particles](https://www.npmjs.com/package/astro-particles)**: Un plugin de Astro para crear efectos de partículas dinámicos en el fondo del sitio.
+- **[Astro](https://astro.build/)**: A framework for building fast websites with UI components from any framework (React, Svelte, Vue, etc.).
+- **[Tailwind CSS](https://tailwindcss.com/)**: A CSS framework for quickly building custom user interfaces.
+- **[astro-particles](https://www.npmjs.com/package/astro-particles)**: An Astro plugin for creating dynamic particle effects in the site's background.
 
-## 🎨 Características del Proyecto
+## 🎨 Project Features
 
-- **Diseño Moderno**: Interfaz limpia y profesional, optimizada para todas las resoluciones de pantalla.
-- **Secciones Dinámicas**:
-  - **Portada**: Una portada de bienvenida.
-  - **Experiencia Laboral**: Trabajos relevantes.
-  - **Proyectos**: Galería de proyectos destacados.
-  - **Tecnologías**: Lista de tecnologías con experiencia.
-  - **Sobre Mí**: Descripción personal.
-- **Fondo Interactivo de Partículas**: Añade un toque visual, innovador y atractivo al portfolio con partículas interactivas que responden al movimiento del cursor y clics del usuario.
-
+- **Modern Design**: Clean and professional interface, optimized for all screen resolutions.
+- **Dynamic Sections**:
+  - **Hero**: A welcoming hero section.
+  - **Work Experience**: Relevant job experiences.
+  - **Projects**: Gallery of featured projects.
+  - **Technologies**: List of experienced technologies.
+  - **About Me**: Personal description.
+- **Interactive Particle Background**: Adds a visually appealing, innovative touch to the portfolio with interactive particles that respond to cursor movement and user clicks.
 
 ##
 
-Este porfolio web ha sido desarrollado siguiendo las explicaciones del canal de Midudev. De esta forma, es posible seguir poco a poco los pasos y comprendiendo cada uno de los aspectos clave de la web.
+This web portfolio was developed following the explanations and advice from the Midudev channel. This approach allows you to follow the steps gradually and understand each key aspect of the website.
