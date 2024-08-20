@@ -1,0 +1,22 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "mar. 2024 - may. 2024",
+    title: "Visual Analytics Intern",
+    company: "Kaizten Analytics",
+    description:
+      "En mi experiencia con Grafana, una herramienta líder en visualización de datos, he diseñado e implementado paneles interactivos y gráficos personalizados para el análisis logístico. Mi rol consiste en aplicar habilidades técnicas y creatividad para transformar datos complejos en visualizaciones claras y efectivas, enfocadas en el rendimiento del transporte, el seguimiento de envíos, tiempos de entrega y otros indicadores clave de rendimiento (KPI) en la cadena de suministro. Colaboro estrechamente con el equipo de desarrollo para integrar conjuntos de datos reales y relevantes, facilitando una comprensión profunda de los procesos logísticos y los desafíos en la gestión de la cadena de suministro."
+  }
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

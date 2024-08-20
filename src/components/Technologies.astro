@@ -1,0 +1,66 @@
+---
+import Python from "./icons/Python.astro"
+import JupyterNotebook from "./icons/JupyterNotebook.astro"
+import Cplusplus from "./icons/Cplusplus.astro"
+import Qt from "./icons/Qt.astro"
+import Grafana from "./icons/Grafana.astro"
+import Docker from "./icons/Docker.astro"
+import Opencv from "./icons/Opencv.astro"
+import Tensorflow from "./icons/Tensorflow.astro"
+import Keras from "./icons/Keras.astro"
+import ScikitLearn from "./icons/ScikitLearn.astro"
+import GCP from "./icons/GCP.astro"
+import Hive from "./icons/Hive.astro"
+import Spark from "./icons/Spark.astro"
+import PowerBI from "./icons/PowerBI.astro"
+import Tableau from "./icons/Tableau.astro"
+import Qlik from "./icons/Qlik.astro"
+import PostgreSQL from "./icons/PostgreSQL.astro"
+import MongoDB from "./icons/MongoDB.astro"
+import Cassandra from "./icons/Cassandra.astro"
+import Astrologo from "./icons/astrologo.astro"
+
+
+// Definición de las tecnologías y sus íconos
+const TECHNOLOGIES = [
+  { name: "Python", icon: Python },
+  { name: "Jupyter Notebook", icon: JupyterNotebook },
+  { name: "ScikitLearn", icon: ScikitLearn },
+  { name: "Keras", icon: Keras },
+  { name: "TensorFlow", icon: Tensorflow },
+  { name: "OpenCV", icon: Opencv },
+  { name: "GCP", icon: GCP },
+
+  { name: "Hive", icon: Hive },
+  { name: "Spark", icon: Spark },
+  { name: "Docker", icon: Docker },
+  { name: "Grafana", icon: Grafana },
+  { name: "PowerBI", icon: PowerBI },
+  { name: "Tableau", icon: Tableau },
+  { name: "Qlik", icon: Qlik },
+
+  { name: "C++", icon: Cplusplus },
+  { name: "Qt", icon: Qt },
+  { name: "PostgreSQL", icon: PostgreSQL },
+  { name: "MongoDB", icon: MongoDB },
+  { name: "Cassandra", icon: Cassandra },
+  { name: "Astro", icon: Astrologo }
+
+]
+---
+
+<section class="py-12">
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6 justify-center">
+    {TECHNOLOGIES.map(({ name, icon: Icon }) => (
+      <div class="flex flex-col items-center justify-center w-24 h-24 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <div class="flex items-center justify-center w-12 h-12 transform scale-[2.5]">
+          <Icon class="w-full h-full" />
+        </div>
+        <p class="mt-2 text-sm font-medium text-gray-800 dark:text-gray-200 text-center">{name}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+

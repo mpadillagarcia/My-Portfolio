@@ -1,0 +1,129 @@
+---
+const personalImageAlt = "Manuel Padilla"
+import Badge from "@/components/Badge.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import GitHubIcon from "@/components/icons/GitHub.astro"
+import CVIcon from "@/components/icons/CV.astro"
+import MailIcon from "@/components/icons/Mail.astro"
+import SocialPill from "@/components/SocialPill.astro"
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="/foto.jpeg"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://linkedin.com/in/mpadillagarcia"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-115"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"> Hola, soy Manu </h1>
+  <span id="typing-effect" class="typing-container text-4xl font-bold text-gray-600 sm:text-5xl dark:text-blue-200 mt-2 block" style="line-height: 1.2; padding-bottom: 0.2em;"></span>
+  <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-blue-400 [&>strong]:text-blue-400 [&>strong]:font-semibold dark:text-gray-300 text-justify">
+  Apasionado por los <strong>datos</strong> y la <strong>Inteligencia Artificial</strong>.
+  
+    <strong>Máster en Visual Analytics & Big Data + Especialidad IA</strong>, y también ingeniero informático con especialidad en Tecnologías de la Información. De<span class="text-orange-400/90 dark:text-orange-200/90"> Albacete, España 🇪🇸 </span>.</p>  
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="mailto:mpadillagarcia01@gmail.com">
+      <MailIcon class="size-4" />
+      Contáctame
+    </SocialPill>
+    <SocialPill href="https://linkedin.com/in/mpadillagarcia">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/mpadillagarcia">
+      <GitHubIcon class="size-4" />
+      GitHub
+    </SocialPill>
+    <SocialPill href="cv.pdf">
+      <CVIcon class="size-4" />
+      CV
+    </SocialPill>
+  </nav>
+</div>
+
+<script>
+  if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", function () {
+      const texts = ["Data Scientist", "Data Engineer"]; // Textos a mostrar
+      const typingElement = document.getElementById("typing-effect");
+      let textIndex = 0;
+      let charIndex = 0;
+      let typingForward = true;
+
+      function typeWriter() {
+        const currentText = texts[textIndex];
+        let displayText = currentText.substring(0, charIndex);
+        
+        // Mantiene el texto visible aunque se borren letras ajustando la opacidad
+        typingElement!.innerHTML = displayText + `<span style="opacity:0">${currentText.substring(charIndex)}</span>`;
+        
+        if (typingForward) {
+          if (charIndex < currentText.length) {
+            charIndex++;
+            setTimeout(typeWriter, 60); // Velocidad de escritura
+          } else {
+            typingForward = false;
+            setTimeout(typeWriter, 1000); // Pausa antes de empezar a borrar
+          }
+        } else {
+          if (charIndex > 0) {
+            charIndex--;
+            setTimeout(typeWriter, 60); // Velocidad de borrado
+          } else {
+            typingForward = true;
+            textIndex = (textIndex + 1) % texts.length; // Alterna entre "Data Scientist" y "Data Engineer"
+            setTimeout(typeWriter, 500); // Pausa antes de empezar a escribir nuevamente
+          }
+        }
+      }
+
+      typeWriter();
+    });
+  }
+</script>
+
+<style>
+  #typing-effect {
+    display: inline-block;
+    min-width: 10ch; /* Ocupa el espacio de 10 caracteres 'ch' */
+    border-right: 0px solid var(--caret-color);
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+
+  .typing-container {
+    margin-top: 0.5rem; /* Separación del texto anterior */
+  }
+
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: var(--caret-color);
+    }
+  }
+
+  /* Tema claro */
+  :root {
+    --caret-color: black; /* Color del cursor en tema claro */
+  }
+
+  /* Tema oscuro */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --caret-color: white; /* Color del cursor en tema oscuro */
+    }
+  }
+</style>

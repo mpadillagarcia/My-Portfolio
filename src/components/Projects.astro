@@ -1,0 +1,149 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import Python from "./icons/Python.astro"
+import JupyterNotebook from "./icons/JupyterNotebook.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+import Cplusplus from "./icons/Cplusplus.astro"
+import Qt from "./icons/Qt.astro"
+import Grafana from "./icons/Grafana.astro"
+import Docker from "./icons/Docker.astro"
+import Tslearn from "./icons/Tslearn.astro"
+import Sktime from "./icons/Sktime.astro"
+import Opencv from "./icons/Opencv.astro"
+import Tensorflow from "./icons/Tensorflow.astro"
+import Keras from "./icons/Keras.astro"
+
+const TAGS = {
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#3d8973] text-white",
+    icon: Python
+  },
+  JUPYTERNOTEBOOK: {
+    name: "JupyterNotebook",
+    class: "bg-[#b47d4a] text-white",
+    icon: JupyterNotebook
+  },
+  CPLUSPLUS: {
+    name: "C++",
+    class: "bg-[#0e4a5d] text-white",
+    icon: Cplusplus
+  },
+  QT: {
+    name: "Qt",
+    class: "bg-[#114d09] text-white",
+    icon: Qt
+  },
+  TSLEARN: {
+    name: "Tslearn",
+    class: "bg-[#3d8973] text-white",
+    icon: Tslearn
+  },
+  SKTIME: {
+    name: "Sktime",
+    class: "bg-[#3d8973] text-white",
+    icon: Sktime
+  },
+  GRAFANA: {
+    name: "Grafana",
+    class: "bg-[#9e4d09]  text-white",
+    icon: Grafana
+  },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-[#003f65]  text-white",
+    icon: Docker
+  },
+  OPENCV: {
+    name: "Opencv",
+    class: "bg-[#b8b8b8]  text-white",
+    icon: Opencv
+  },
+  TENSORFLOW: {
+    name: "Tensorflow",
+    class: "bg-[#b75f0d]  text-white",
+    icon: Tensorflow
+  },
+  KERAS: {
+    name: "Keras",
+    class: "bg-[#D00000]  text-white",
+    icon: Keras
+  }
+}
+const PROJECTS = [
+  {
+    title: "Cryptocurrency Price Clustering Models",
+    description:
+      "Comparativa y evaluación de diferentes modelos de clustering de series de tiempo de criptomonedas. Se emplean las bibliotecas Tslearn y Sktime de Python. El código se desarrolla en Jupyter Notebook y las visualizaciones en Scimago Graphica.",
+    github: "https://github.com/mpadillagarcia/Time-Series-Clustering",
+    image: "/projects/proyecto1.webp",
+    tags: [TAGS.PYTHON, TAGS.JUPYTERNOTEBOOK, TAGS.TSLEARN, TAGS.SKTIME],
+  },
+  {
+    title: "Dashboards on Grafana",
+    description:
+      "Se trabaja con Grafana, una herramienta de visualización de datos ampliamente utilizada, para crear visualizaciones e informes en el contexto logístico. Se aplican habilidades técnicas y la creatividad para proporcionar soluciones visuales efectivas que ayuden a comprender y analizar datos logísticos de manera eficiente.",
+    github: "https://github.com/mpadillagarcia/Grafana-Dashboads",
+    image: "/projects/proyecto2.webp",
+    tags: [TAGS.GRAFANA, TAGS.DOCKER, TAGS.PYTHON],
+  },
+  {
+    title: "Neural Network Examples",
+    description:
+      "Incluye tres notebooks de Jupyter enfocados en redes neuronales: uno para clasificación de imágenes utilizando Fashion MNIST, otro para clasificación de imágenes de personajes de Los Simpsons con Redes Neuronales Convolucionales (CNNs), y otro para predecir series temporales sobre datos de temperaturas utilizando Redes Neuronales Recurrentes (RNNs).",
+    github: "https://github.com/mpadillagarcia/NeuralNetwork-Examples",
+    image: "/projects/proyecto3.webp",
+    tags: [TAGS.PYTHON, TAGS.JUPYTERNOTEBOOK, TAGS.KERAS, TAGS.TENSORFLOW],
+  }
+]
+---
+
+<div class="flex flex-col gap-y-16 text-justify">
+  {
+    PROJECTS.map(({ image, title, description, tags, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+

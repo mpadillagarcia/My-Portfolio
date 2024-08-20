@@ -1,0 +1,167 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import AboutMe from "@/components/AboutMe.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import Experience from "@/components/Experience.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Projects from "@/components/Projects.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Hero from "@/components/Hero.astro"
+
+import Technologies from "@/components/Technologies.astro"
+import Particles from "astro-particles"
+
+
+
+
+const options = {
+    background: {
+        color: "#FF" // Fondo blanco
+    },
+    fullScreen: {
+        zIndex: -1 // Mantener detrás de todo el contenido
+    },
+    particles: {
+        number: {
+            value: 100 // Número de partículas
+        },
+        color: {
+            value: "#000000" // Color negro para las partículas
+        },
+        shape: {
+            type: "circle", // Usar círculos para las partículas (puede ser "line", "edge", "circle", etc.)
+        },
+        opacity: {
+            value: 1 // Partículas completamente opacas
+        },
+        size: {
+            value: 1.3, // Tamaño pequeño para que se vean como texto/link
+            random: true // Tamaño variable para más naturalidad
+        },
+        move: {
+            enable: true, // Movimiento habilitado
+            speed: 0.5, // Velocidad del movimiento
+            direction: "none", // Movimiento aleatorio en cualquier dirección
+            outMode: "bounce" // Rebota en los bordes
+        },
+        line_linked: { // En versiones más recientes puede ser `links`
+            enable: true, // Habilitar las líneas entre partículas
+            distance: 100, // Distancia máxima para que se conecten las partículas
+            color: "#000000", // Color de las líneas
+            opacity: 0.3, // Opacidad de las líneas
+            width: 0.6 // Ancho de las líneas
+        }
+    },
+    interactivity: {
+        events: {
+            onHover: {
+                enable: true, // Habilitar la interacción al pasar el ratón
+                mode: "repulse" // Las partículas se alejan al pasar el ratón
+            },
+            onClick: {
+                enable: true, // Habilitar la interacción al hacer clic
+                mode: "push" // Agregar partículas al hacer clic
+            }
+        },
+        modes: {
+            repulse: {
+                distance: 100 // Distancia a la que se repulsan las partículas
+            },
+            push: {
+                quantity: 4 // Cantidad de partículas que se agregan al hacer clic
+            }
+        }
+    },
+    retina_detect: true // Detectar pantallas Retina para mejor renderizado
+};
+
+
+---
+<script>
+  import { type Engine, tsParticles } from "tsparticles-engine";
+  import { loadFull } from "tsparticles";
+
+  window.particlesInit = async (engine: Engine) => {
+      await loadFull(engine);
+  };
+</script>
+
+<Layout
+  title="Porfolio de Manuel Padilla"
+  description="Contrata a Manuel Padilla como Ingeniero de Datos. Especializado en análisis y visualización de datos masivos. Tecnologías Big Data e IA."
+>
+  <main class="px-4">
+
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
+    </SectionContainer>
+    <div class="space-y-24">
+    <SectionContainer id="experiencia">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-8" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="tecnologias">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-8" />
+        Tecnologías
+      </h2>
+      <Technologies />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+      >
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </h2>
+      <AboutMe />
+    </SectionContainer>
+  </div>
+  </main>
+</Layout>
+
+<div id="particles-container">
+  <Particles id="tsparticles" options={options} init="particlesInit" />
+</div>
+
+<style is:global>
+  #particles-container {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  #tsparticles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+  }
+</style>
