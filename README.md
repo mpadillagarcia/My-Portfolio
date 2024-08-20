@@ -24,4 +24,4 @@ Puedes visitar el portfolio aquí: **[mpadilla.netlify.app](https://mpadilla.net
 
 ##
 
-Este
+Este porfolio web ha sido desarrollado siguiendo las explicaciones del canal de Midudev. De esta forma, es posible seguir poco a poco los pasos y comprendiendo cada uno de los aspectos clave de la web.
